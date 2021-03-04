@@ -1,3 +1,46 @@
 * {
-  
+  border: 1px solid red;
 }
+
+html,
+body {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.player-turn {
+  display: flex;
+  align-items: center;
+}
+
+.player-1-container,
+.player-2-container {
+  height: 100%;
+  width: 70%;
+  background-color: yellow;
+}
+
+.wins-area {
+  text-align: center;
+}
+
+.game-area {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5em;
+  background-color: green;
+}
+
+.game-play-area {
+  height: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.box {
+  height: 120px;
+  width: 120px;
