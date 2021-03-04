@@ -32,3 +32,15 @@ body {
   padding: 5em;
   background-color: green;
 }
+
+.game-play-area {
+  height: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.box {
+  height: 120px;
+  width: 120px;
