@@ -1,7 +1,7 @@
 class Game {
   constructor() {
-    this.player1 = new Player('One', 🍩);
-    this.player2 = new Player('Two', 🥓);
+    this.player1 = new Player('One', '🍩');
+    this.player2 = new Player('Two', '🥓');
     this.turn = true; // or [player1, player2]??
     this.tokenGameSpace = [
        boxA, boxB, boxC,
@@ -13,5 +13,17 @@ class Game {
       'adg', 'beh','cfi',
       'aei', 'ceg'
     ];
+  }
+  
+  detectWinConditions() {
+
+  }
+
+  detectDrawGame() {
+
+  }
+
+  resetGameBoard() {
+
   }
 }
