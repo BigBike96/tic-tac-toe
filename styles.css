@@ -24,3 +24,11 @@ body {
 .wins-area {
   text-align: center;
 }
+
+.game-area {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5em;
+  background-color: green;
+}
