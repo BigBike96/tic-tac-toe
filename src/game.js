@@ -17,13 +17,15 @@ class Game {
 
   changeGameSpaceData(event) {
     for (var i = 0; i < this.tokenGameSpace.length) {
-    if (this.turn && this.target.id === this.tokenGameSpace[i]) {
+    if (this.target.id === this.tokenGameSpace[i]) {
       this.tokenGameSpace.splice(i, 1);
-      //whatever is clicked, update
-    } else if (!this.turn) {
+      //whatever is clicked, update data
+    }
+    }
+  }
 
-    }
-    }
+  changeTurn() {
+    this.turn = !this.turn;
   }
 
   detectWinConditions() {
