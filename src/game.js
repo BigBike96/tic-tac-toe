@@ -11,13 +11,11 @@ class Game {
        boxG, boxH, boxI
     ];
     this.gameWinConditions = [
-      [boxA, boxB, boxC], [boxD, boxE, boxF],
-      [boxG, boxH, boxI], [boxA, boxD, boxG],
-      [boxB, boxE, boxH], [boxC, boxF, boxI],
-      [boxA, boxE, boxI], [boxC, boxE, boxG]
-      // 'abc','def','ghi',
-      // 'adg', 'beh','cfi',
-      // 'aei', 'ceg'
+      [0, 1, 2], [3, 4, 5],
+      [6, 7, 8], [0, 3, 6],
+      [1, 4, 7], [2, 5, 8],
+      [0, 4, 8], [2, 4, 6]
+
     ];
   }
 
@@ -41,16 +39,28 @@ class Game {
     this.turn = !this.turn;
   }
 
+  detectBoardConditions() {
+    if (this.turnCounter >= 5 && this.turnCounter <= 9) {
+      detectWinConditions();
+      detectDrawGame();
+    }
+  }
+
   detectWinConditions() {
+    // iterate through gameWinConditions
+    // // declare counter variables for one and two
+    // // // for each gameWinCondition[i], iterate through the array
+    // // // if this.tokenGameSpace[gameWinCondition[j < gameWinConditions[i].length]] is === "One" || "Two"
+    // // // // ++ counter "One" || "Two"
+    // // need thrid condition else break (this is for the inner loop)
+    // // if counter one === 3 || two === 3, then win condition (checking line 51) currentPlayer.wins += 1
     for (var i = 0; i < this.gameWinConditions.length; i++) {
+      // if(this.gameWinConditions )
       if (this.tokenGameSpace.includes(this.gameWinConditions[i])){}
     }
   }
 
   detectDrawGame() {
-    if (this.turnCounter >= 5 && this.turnCounter <= 9) {
-
-    }
   }
 
   resetGameBoard() {
@@ -63,3 +73,10 @@ class Game {
     this.turnCounter = 0;
   }
 }
+// [boxA, boxB, boxC], [boxD, boxE, boxF],
+// [boxG, boxH, boxI], [boxA, boxD, boxG],
+// [boxB, boxE, boxH], [boxC, boxF, boxI],
+// [boxA, boxE, boxI], [boxC, boxE, boxG]
+// 'abc','def','ghi',
+// 'adg', 'beh','cfi',
+// 'aei', 'ceg'
