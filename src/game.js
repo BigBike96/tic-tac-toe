@@ -22,10 +22,11 @@ class Game {
 
   changeGameSpaceData(event) {
     this.turnCounter += 1;
+    this.changeTurn();
     for (var i = 0; i < this.tokenGameSpace.length; i++) {
     if (event === this.tokenGameSpace[i]) {
       this.tokenGameSpace.splice(i, 1, this.player1.token);
-// how can I splice in the correct token?
+
     }
     }
   }
@@ -52,7 +53,7 @@ class Game {
        boxD, boxE, boxF,
        boxG, boxH, boxI
     ];
-    changeTurn();
+    this.changeTurn();
     this.turnCounter = 0;
   }
 }
