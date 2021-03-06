@@ -25,6 +25,11 @@ body {
   text-align: center;
 }
 
+/* .game-board {
+    width: 40vw;
+    height: 40vw;
+} */
+
 .game-area {
   display: flex;
   justify-content: space-around;
