@@ -6,14 +6,14 @@ class Player {
   }
 
   addWin() {
-    this.win += 1;
+    this.wins += 1;
   }
 
   saveWinsToStorage() {
-
+  // save wins to local storage to presits on re-fresh
   }
 
   retrieveWinsFromStorage() {
-
+  // load wins to page on refresh
   }
 }
