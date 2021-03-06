@@ -2,8 +2,9 @@ class Game {
   constructor() {
     this.player1 = new Player('One', '🥓');
     this.player2 = new Player('Two', '🍩');
-    this.turn = true; // or [player1, player2]??
+    // this.turn = true; or [player1, player2]??
     this.turnCounter = 0;
+    // this.currentPlayer;
     this.tokenGameSpace = [
        boxA, boxB, boxC,
        boxD, boxE, boxF,
@@ -23,11 +24,16 @@ class Game {
   changeGameSpaceData(event) {
     this.turnCounter += 1;
     this.changeTurn();
-    for (var i = 0; i < this.tokenGameSpace.length; i++) {
-    if (event === this.tokenGameSpace[i]) {
-      this.tokenGameSpace.splice(i, 1, this.player1.token);
-
+    var currentPlayer;
+    if (this.turnCounter % 2 === 0) {
+      currentPlayer = this.player2;
+    } else {
+      currentPlayer = this.player1;
     }
+    for (var i = 0; i < this.tokenGameSpace.length; i++) {
+      if (event === this.tokenGameSpace[i]) {
+        this.tokenGameSpace.splice(i, 1, currentPlayer.id);
+      }
     }
   }
 
