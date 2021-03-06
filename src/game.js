@@ -8,16 +8,21 @@ class Game {
        boxD, boxE, boxF,
        boxG, boxH, boxI
     ];
-    this.gameWinConditions = [
-      'abc','def','ghi',
-      'adg', 'beh','cfi',
-      'aei', 'ceg'
+    this.gameWinConditions =
+    [
+      [boxA, boxB, boxC], [boxD, boxE, boxF],
+      [boxG, boxH, boxI], [boxA, boxD, boxG],
+      [boxB, boxE, boxH], [boxC, boxF, boxI],
+      [boxA, boxE, boxI], [boxC, boxE, boxG]
+      // 'abc','def','ghi',
+      // 'adg', 'beh','cfi',
+      // 'aei', 'ceg'
     ];
   }
 
   changeGameSpaceData(event) {
-    for (var i = 0; i < this.tokenGameSpace.length) {
-    if (this.target.id === this.tokenGameSpace[i]) {
+    for (var i = 0; i < this.tokenGameSpace.length; i++) {
+    if (event.target.id === this.tokenGameSpace[i]) {
       this.tokenGameSpace.splice(i, 1);
       //whatever is clicked, update data
     }
@@ -29,7 +34,9 @@ class Game {
   }
 
   detectWinConditions() {
+    for (var i = 0; i < this.tokenGameSpace.length; i++) {
 
+    }
   }
 
   detectDrawGame() {
@@ -37,6 +44,11 @@ class Game {
   }
 
   resetGameBoard() {
-
+    this.tokenGameSpace = [
+       boxA, boxB, boxC,
+       boxD, boxE, boxF,
+       boxG, boxH, boxI
+    ];
+    changeTurn();
   }
 }
