@@ -58,11 +58,12 @@ class Game {
       for (var j = 0; j <= this.gameWinConditions[i].length; i++) {
         console.log('pants', this.gameWinConditions[i]);
         // // // if this.tokenGameSpaces[gameWinCondition] is === "One" || "Two"
-        if (this.tokenGameSpaces[this.gameWinConditions[i]] === 'One') {
+        console.log('shoes', this.tokenGameSpaces[this.gameWinConditions[i]]);
+        if (this.tokenGameSpaces.includes([this.gameWinConditions[i]] === 'One')) {
           // // // // ++ counter "One" || "Two"
           counterPlayerOne += 1;
         }
-        else if (this.tokenGameSpaces[this.gameWinConditions[i]] === 'Two') {
+        else if (this.tokenGameSpaces.includes([this.gameWinConditions[i]] === 'Two')) {
           counterPlayerTwo += 1;
         } else {
           // // need thrid condition else break (this is for the inner loop)
