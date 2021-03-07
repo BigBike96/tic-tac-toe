@@ -6,6 +6,6 @@
 // - detectDrawGame(), detectWinConditions()
 // switch the turn
 //
-var game = new Game();
+// var game = new Game();
 
 // when clicking a box, change the inner text of the section (value?) to the icon

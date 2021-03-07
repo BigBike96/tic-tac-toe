@@ -5,7 +5,7 @@ class Game {
     // this.turn = true; or [player1, player2]??
     this.turnCounter = 0;
     // this.currentPlayer;
-    this.tokenGameSpace = [
+    this.tokenGameSpaces = [
        boxA, boxB, boxC,
        boxD, boxE, boxF,
        boxG, boxH, boxI
@@ -21,55 +21,78 @@ class Game {
 
   changeGameSpaceData(event) {
     this.turnCounter += 1;
-    this.changeTurn();
+    // this.changeTurn();
     var currentPlayer;
     if (this.turnCounter % 2 === 0) {
       currentPlayer = this.player2;
     } else {
       currentPlayer = this.player1;
     }
-    for (var i = 0; i < this.tokenGameSpace.length; i++) {
-      if (event === this.tokenGameSpace[i]) {
-        this.tokenGameSpace.splice(i, 1, currentPlayer.id);
+    for (var i = 0; i < this.tokenGameSpaces.length; i++) {
+      if (event === this.tokenGameSpaces[i]) {
+        this.tokenGameSpaces.splice(i, 1, currentPlayer.id);
       }
     }
+    this.detectBoardConditions();
   }
 
-  changeTurn() {
-    this.turn = !this.turn;
-  }
+  // changeTurn() {
+    // this.turn = !this.turn;
+  // }
 
   detectBoardConditions() {
     if (this.turnCounter >= 5 && this.turnCounter <= 9) {
-      detectWinConditions();
-      detectDrawGame();
+      this.detectWinConditions();
+      this.detectDrawGame();
     }
   }
 
   detectWinConditions() {
     // iterate through gameWinConditions
-    // // declare counter variables for one and two
-    // // // for each gameWinCondition[i], iterate through the array
-    // // // if this.tokenGameSpace[gameWinCondition[j < gameWinConditions[i].length]] is === "One" || "Two"
-    // // // // ++ counter "One" || "Two"
-    // // need thrid condition else break (this is for the inner loop)
-    // // if counter one === 3 || two === 3, then win condition (checking line 51) currentPlayer.wins += 1
     for (var i = 0; i < this.gameWinConditions.length; i++) {
-      // if(this.gameWinConditions )
-      if (this.tokenGameSpace.includes(this.gameWinConditions[i])){}
+      // // declare counter variables for one and two
+      var counterPlayerOne = 0;
+      var counterPlayerTwo = 0;
+      console.log('shirt', counterPlayerOne, counterPlayerTwo);
+      // // // for each gameWinCondition[i], iterate through the array
+      for (var j = 0; j <= this.gameWinConditions[i].length; i++) {
+        console.log('pants', this.gameWinConditions[i]);
+        // // // if this.tokenGameSpaces[gameWinCondition] is === "One" || "Two"
+        if (this.tokenGameSpaces[this.gameWinConditions[i]] === 'One') {
+          // // // // ++ counter "One" || "Two"
+          counterPlayerOne += 1;
+        }
+        else if (this.tokenGameSpaces[this.gameWinConditions[i]] === 'Two') {
+          counterPlayerTwo += 1;
+        } else {
+          // // need thrid condition else break (this is for the inner loop)
+          break;
+        }
+// // if counter one === 3 || two === 3, then win condition (checking line 51) currentPlayer.wins += 1
+      }
+      if (counterPlayerOne === 3) {
+        this.player1.wins += 1;
+        this.resetGameBoard();
+      }
+      if (counterPlayerTwo === 3) {
+        this.player2.wins += 1;
+        this.resetGameBoard();
+      }
     }
   }
+  // if (this.tokenGameSpaces.includes(this.gameWinConditions[i])){}
+
 
   detectDrawGame() {
   }
 
   resetGameBoard() {
-    this.tokenGameSpace = [
+    this.tokenGameSpaces = [
        boxA, boxB, boxC,
        boxD, boxE, boxF,
        boxG, boxH, boxI
     ];
-    this.changeTurn();
+    // this.changeTurn();
     this.turnCounter = 0;
   }
 }
