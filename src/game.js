@@ -48,37 +48,37 @@ class Game {
   }
 
   detectWinConditions() {
-    // iterate through gameWinConditions
     for (var i = 0; i < this.gameWinConditions.length; i++) {
-      // // declare counter variables for one and two
       var counterPlayerOne = 0;
       var counterPlayerTwo = 0;
-      console.log('shirt', counterPlayerOne, counterPlayerTwo);
-      // // // for each gameWinCondition[i], iterate through the array
-      for (var j = 0; j <= this.gameWinConditions[i].length; i++) {
-        console.log('pants', this.gameWinConditions[i]);
-        // // // if this.tokenGameSpaces[gameWinCondition] is === "One" || "Two"
-        console.log('shoes', this.tokenGameSpaces[this.gameWinConditions[i]]);
-        if (this.tokenGameSpaces.includes([this.gameWinConditions[i]] === 'One')) {
-          // // // // ++ counter "One" || "Two"
+      console.log('counters', counterPlayerOne, counterPlayerTwo);
+      console.log('game win conditions', this.gameWinConditions[i]);
+      for (var j = 0; j < this.gameWinConditions[i].length; j++) {
+        var conditional = this.tokenGameSpaces[this.gameWinConditions[i][j]]
+          console.log('conditional', conditional);
+          if (conditional === 'One') {
           counterPlayerOne += 1;
-        }
-        else if (this.tokenGameSpaces.includes([this.gameWinConditions[i]] === 'Two')) {
+          } else if (conditional === 'Two') {
           counterPlayerTwo += 1;
-        } else {
-          // // need thrid condition else break (this is for the inner loop)
+          } else {
           break;
-        }
+          }
+        // iterate through gameWinConditions
+        // // declare counter variables for one and two
+        // // // for each gameWinConditions[i], iterate through the array
+        // // // if this.tokenGameSpaces[gameWinConditions] is === "One" || "Two"
+        // // // // ++ counter "One" || "Two"
+        // // need thrid condition else break (this is for the inner loop)
 // // if counter one === 3 || two === 3, then win condition (checking line 51) currentPlayer.wins += 1
       }
-      if (counterPlayerOne === 3) {
-        this.player1.wins += 1;
-        this.resetGameBoard();
-      }
-      if (counterPlayerTwo === 3) {
-        this.player2.wins += 1;
-        this.resetGameBoard();
-      }
+      // if (counterPlayerOne === 3) {
+      //   this.player1.wins += 1;
+      //   this.resetGameBoard();
+      // }
+      // if (counterPlayerTwo === 3) {
+      //   this.player2.wins += 1;
+      //   this.resetGameBoard();
+      // }
     }
   }
   // if (this.tokenGameSpaces.includes(this.gameWinConditions[i])){}
