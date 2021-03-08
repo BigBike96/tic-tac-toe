@@ -1,4 +1,5 @@
 // main.js file
+var gamePlayArea = document.querySelector('#gamePlayArea');
 var boxA = document.querySelector('#boxA');
 var boxB = document.querySelector('#boxB');
 var boxC = document.querySelector('#boxC');
@@ -8,6 +9,8 @@ var boxF = document.querySelector('#boxF');
 var boxG = document.querySelector('#boxG');
 var boxH = document.querySelector('#boxH');
 var boxI = document.querySelector('#boxI');
+
+gamePlayArea.addEventListener(clickHandler);
 
 // function runs on each click
 // figure out which space was clicked
