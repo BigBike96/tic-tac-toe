@@ -49,7 +49,7 @@ function clickHandler(event) {
     currentGame.changeGameSpaceData(event.target.id);
     boxI.innerText = currentGame.currentPlayer.token;
   }
-  // checkDOMGameData();
+  displayCurrentTurn();
 }
 
 function clearScreenBoard() {
@@ -67,6 +67,15 @@ function clearScreenBoard() {
 function displayWins() {
   player1Container.innerText = `🥓 ${currentGame.player1.wins} Wins`;
   player2Container.innerText = `🍩 ${currentGame.player2.wins} Wins`;
+  clearScreenBoard();
+}
+
+function displayCurrentTurn() {
+  if (currentGame.currentPlayer.token === '🥓') {
+    turnIndicator.innerText = `It's 🍩's turn`;
+  } else {
+    turnIndicator.innerText = `It's 🥓's turn`;
+  }
 }
 // gameBoardAction();
 

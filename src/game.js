@@ -11,7 +11,7 @@ class Game {
     ];
   }
 
-  changeGameSpaceData(event) {
+  changeGameSpaceData(clickData) {
     this.turnCounter += 1;
     if (this.turnCounter % 2 === 0) {
       this.currentPlayer = this.player2;
@@ -19,7 +19,7 @@ class Game {
       this.currentPlayer = this.player1;
     }
     for (var i = 0; i < this.tokenGameSpaces.length; i++) {
-      if (event === this.tokenGameSpaces[i]) {
+      if (clickData === this.tokenGameSpaces[i].id) {
         this.tokenGameSpaces.splice(i, 1, this.currentPlayer.id);
       }
     }
@@ -37,29 +37,38 @@ class Game {
       if (this.tokenGameSpaces[0] === this.tokenGameSpaces[1] && this.tokenGameSpaces[1] === this.tokenGameSpaces[2] && this.tokenGameSpaces[2] === this.currentPlayer.id) {
         this.currentPlayer.addWin();
         this.resetGameBoard();
+        displayWins();
       } else if (this.tokenGameSpaces[3] === this.tokenGameSpaces[4] && this.tokenGameSpaces[4] === this.tokenGameSpaces[5] && this.tokenGameSpaces[5] === this.currentPlayer.id) {
         this.currentPlayer.addWin();
         this.resetGameBoard();
+        displayWins();
       } else if (this.tokenGameSpaces[6] === this.tokenGameSpaces[7] && this.tokenGameSpaces[7] === this.tokenGameSpaces[8] && this.tokenGameSpaces[8] === this.currentPlayer.id) {
         this.currentPlayer.addWin();
         this.resetGameBoard();
+        displayWins();
       } else if (this.tokenGameSpaces[0] === this.tokenGameSpaces[3] && this.tokenGameSpaces[3] === this.tokenGameSpaces[6] && this.tokenGameSpaces[6] === this.currentPlayer.id) {
         this.currentPlayer.addWin();
         this.resetGameBoard();
+        displayWins();
       } else if (this.tokenGameSpaces[1] === this.tokenGameSpaces[4] && this.tokenGameSpaces[4] === this.tokenGameSpaces[7] && this.tokenGameSpaces[7] === this.currentPlayer.id) {
         this.currentPlayer.addWin();
         this.resetGameBoard();
+        displayWins();
       } else if (this.tokenGameSpaces[2] === this.tokenGameSpaces[5] && this.tokenGameSpaces[5] === this.tokenGameSpaces[8] && this.tokenGameSpaces[8] === this.currentPlayer.id) {
         this.currentPlayer.addWin();
         this.resetGameBoard();
+        displayWins();
       } else if (this.tokenGameSpaces[0] === this.tokenGameSpaces[4] && this.tokenGameSpaces[4] === this.tokenGameSpaces[8] && this.tokenGameSpaces[8] === this.currentPlayer.id) {
         this.currentPlayer.addWin();
         this.resetGameBoard();
+        displayWins();
       } else if (this.tokenGameSpaces[2] === this.tokenGameSpaces[4] && this.tokenGameSpaces[4] === this.tokenGameSpaces[6] && this.tokenGameSpaces[6] === this.currentPlayer.id) {
         this.currentPlayer.addWin();
         this.resetGameBoard();
+        displayWins();
       } else if (this.turnCounter === 9) {
         this.resetGameBoard();
+        displayWins();
       }
     }
   }
