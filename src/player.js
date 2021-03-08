@@ -11,6 +11,7 @@ class Player {
 
   saveWinsToStorage() {
   // save wins to local storage to presits on re-fresh
+  localStorage.setItem(`${this.id}`, JSON.stringify(this.wins))
   }
 
   retrieveWinsFromStorage() {
