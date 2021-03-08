@@ -9,13 +9,6 @@ class Game {
        boxD, boxE, boxF,
        boxG, boxH, boxI
     ];
-    this.gameWinConditions = [
-      [0, 1, 2], [3, 4, 5],
-      [6, 7, 8], [0, 3, 6],
-      [1, 4, 7], [2, 5, 8],
-      [0, 4, 8], [2, 4, 6]
-
-    ];
   }
 
   changeGameSpaceData(event) {
@@ -36,7 +29,6 @@ class Game {
   detectBoardConditions() {
     if (this.turnCounter >= 5 && this.turnCounter <= 9) {
       this.detectWinConditions();
-      this.detectDrawGame();
     }
   }
 
@@ -66,12 +58,10 @@ class Game {
       } else if (this.tokenGameSpaces[2] === this.tokenGameSpaces[4] && this.tokenGameSpaces[4] === this.tokenGameSpaces[6] && this.tokenGameSpaces[6] === this.currentPlayer.id) {
         this.currentPlayer.wins += 1;
         this.resetGameBoard();
+      } else if (this.turnCounter === 9) {
+        this.resetGameBoard();
       }
     }
-  }
-
-  detectDrawGame() {
-    
   }
 
   resetGameBoard() {
@@ -83,6 +73,14 @@ class Game {
     this.turnCounter = 0;
   }
 }
+
+// this.detectDrawGame();
+// detectDrawGame() {
+  //   if (this.turnCounter === 9) {
+    //     this.resetGameBoard();
+    //   }
+    // }
+
   // detectWinConditions() {
   //   for (var i = 0; i < this.gameWinConditions.length; i++) {
   //     var counterPlayerOne = 0;
@@ -121,6 +119,13 @@ class Game {
   // if (this.tokenGameSpaces.includes(this.gameWinConditions[i])){}
 
 
+  // this.gameWinConditions = [
+    //   [0, 1, 2], [3, 4, 5],
+    //   [6, 7, 8], [0, 3, 6],
+    //   [1, 4, 7], [2, 5, 8],
+    //   [0, 4, 8], [2, 4, 6]
+    //
+    // ];
 // [boxA, boxB, boxC], [boxD, boxE, boxF],
 // [boxG, boxH, boxI], [boxA, boxD, boxG],
 // [boxB, boxE, boxH], [boxC, boxF, boxI],
