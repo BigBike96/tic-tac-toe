@@ -17,25 +17,24 @@ body {
 .player-1-container,
 .player-2-container {
   height: 100%;
-  width: 70%;
-  background-color: yellow;
+  width: 60%;
+  background-color: #00FFFF;
 }
 
 .wins-area {
   text-align: center;
 }
 
-/* .game-board {
-    width: 40vw;
-    height: 40vw;
-} */
+.game-board {
+    background-color: #7FFFD4;
+}
 
 .game-area {
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 5em;
-  background-color: green;
+  background-color: #FAEBD7;
 }
 
 .game-play-area {
