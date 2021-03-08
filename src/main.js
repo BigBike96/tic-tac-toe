@@ -63,6 +63,11 @@ function clearScreenBoard() {
   boxH.innerText = "";
   boxI.innerText = "";
 }
+
+function displayWins() {
+  player1Container.innerText = `🥓 ${currentGame.player1.wins} Wins`;
+  player2Container.innerText = `🍩 ${currentGame.player2.wins} Wins`;
+}
 // gameBoardAction();
 
 // function gameBoardAction(event) {
