@@ -15,42 +15,44 @@ var boxI = document.querySelector('#boxI');
 var currentGame = new Game();
 
 // window.addEventListener('load', storageGameboard);
-gamePlayArea.addEventListener('click', clickHandler);
-// gamePlayArea.addEventListener('click', gameBoardAction);
+// gamePlayArea.addEventListener('click', clickHandler);
+gamePlayArea.addEventListener('click', gameBoardAction);
 
-function clickHandler(event) {
-  event.preventDefault();
-  if (event.target.classList.contains('a')) {
-    console.log('a');
-  } else if ((event.target.classList.contains('b'))) {
-    console.log('b');
-  } else if ((event.target.classList.contains('c'))) {
-    console.log('c');
-  } else if ((event.target.classList.contains('d'))) {
-    console.log('d');
-  } else if ((event.target.classList.contains('e'))) {
-
-  } else if ((event.target.classList.contains('f'))) {
-
-  } else if ((event.target.classList.contains('g'))) {
-
-  } else if ((event.target.classList.contains('h'))) {
-
-  } else if ((event.target.classList.contains('i'))) {
-
-  }
-}
-// gameBoardAction();
+// function clickHandler(event) {
+//   event.preventDefault();
+//   if (event.target.classList.contains('a')) {
+//     currentGame.changeGameSpaceData(boxA);
+//   } else if ((event.target.classList.contains('b'))) {
+//     console.log('b');
+//   } else if ((event.target.classList.contains('c'))) {
+//     console.log('c');
+//   } else if ((event.target.classList.contains('d'))) {
+//     console.log('d');
+//   } else if ((event.target.classList.contains('e'))) {
 //
-// function gameBoardAction(event) {
-//   for (var i = 0; i < currentGame.tokenGameSpaces.length; i++) {
-//     if (event.target.id === currentGame.tokenGameSpaces[i]) {
-//       console.log('pants');
-//       currentGame.changeGameSpaceData(event);
+//   } else if ((event.target.classList.contains('f'))) {
 //
-//     }
+//   } else if ((event.target.classList.contains('g'))) {
+//
+//   } else if ((event.target.classList.contains('h'))) {
+//
+//   } else if ((event.target.classList.contains('i'))) {
+//
 //   }
 // }
+// gameBoardAction();
+
+function gameBoardAction(event) {
+  event.preventDefault();
+  for (var i = 0; i < currentGame.tokenGameSpaces.length; i++) {
+    if (event.target.id === currentGame.tokenGameSpaces[i].id) {
+      console.log('pants', event.target.id);
+      console.log(currentGame);
+      currentGame.changeGameSpaceData(event.target.id);
+      console.log(currentGame);
+    }
+  }
+}
 // function runs on each click
 // figure out which space was clicked
 // changeGameSpaceData
