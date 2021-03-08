@@ -1,4 +1,7 @@
 // main.js file
+
+var player1Container = document.querySelector('#player1Container');
+var player2Container = document.querySelector('#player2Container');
 var gamePlayArea = document.querySelector('#gamePlayArea');
 var boxA = document.querySelector('#boxA');
 var boxB = document.querySelector('#boxB');
