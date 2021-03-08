@@ -16,9 +16,12 @@ var boxI = document.querySelector('#boxI');
 var currentGame = new Game();
 
 // window.addEventListener('load', storageGameboard);
+
 gamePlayArea.addEventListener('click', clickHandler);
 // gamePlayArea.addEventListener('click', gameBoardAction);
 
+//>>>> A TIMEOUT IS USED AFTER A COMPLETED GAME TO RESET THE BOARD.<<<<<<<<<
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 function clickHandler(event) {
   event.preventDefault();
   if (event.target.classList.contains('a')) {
@@ -53,15 +56,17 @@ function clickHandler(event) {
 }
 
 function clearScreenBoard() {
-  boxA.innerText = "";
-  boxB.innerText = "";
-  boxC.innerText = "";
-  boxD.innerText = "";
-  boxE.innerText = "";
-  boxF.innerText = "";
-  boxG.innerText = "";
-  boxH.innerText = "";
-  boxI.innerText = "";
+  setTimeout(function() {
+    boxA.innerText = "";
+    boxB.innerText = "";
+    boxC.innerText = "";
+    boxD.innerText = "";
+    boxE.innerText = "";
+    boxF.innerText = "";
+    boxG.innerText = "";
+    boxH.innerText = "";
+    boxI.innerText = "";
+  }, 3000)
 }
 
 function displayWins() {
