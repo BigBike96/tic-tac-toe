@@ -1,13 +1,13 @@
 // main.js file
 var boxA = document.querySelector('#boxA');
-var boxB = document.querySelector('#boxA');
-var boxC = document.querySelector('#boxA');
-var boxD = document.querySelector('#boxA');
-var boxE = document.querySelector('#boxA');
-var boxF = document.querySelector('#boxA');
-var boxG = document.querySelector('#boxA');
-var boxH = document.querySelector('#boxA');
-var boxI = document.querySelector('#boxA');
+var boxB = document.querySelector('#boxB');
+var boxC = document.querySelector('#boxC');
+var boxD = document.querySelector('#boxD');
+var boxE = document.querySelector('#boxE');
+var boxF = document.querySelector('#boxF');
+var boxG = document.querySelector('#boxG');
+var boxH = document.querySelector('#boxH');
+var boxI = document.querySelector('#boxI');
 
 // function runs on each click
 // figure out which space was clicked
