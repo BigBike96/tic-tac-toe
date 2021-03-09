@@ -31,7 +31,9 @@ class Game {
       this.detectWinConditions();
     }
   }
-
+// can displayWins() be moved to main.js
+// can this be smaller?
+// 'you win' message?
   detectWinConditions() {
     for (var i = 0; i < this.tokenGameSpaces.length; i++) {
       if (this.tokenGameSpaces[0] === this.tokenGameSpaces[1] && this.tokenGameSpaces[1] === this.tokenGameSpaces[2] && this.tokenGameSpaces[2] === this.currentPlayer.id) {

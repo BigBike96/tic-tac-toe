@@ -16,6 +16,6 @@ class Player {
 
   retrieveWinsFromStorage() {
   // load wins to page on refresh
-  var localStorageWins = JSON.parse(localStorage.getItem(`${this.id}-Wins`)) || [];
+  this.wins = JSON.parse(localStorage.getItem(`${this.id}`)) || 0;
   }
 }
