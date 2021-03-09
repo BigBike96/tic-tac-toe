@@ -24,15 +24,20 @@ function loadLocalStorage() {
   displayWins();
 }
 
-function clearScreenBoard() {
-  turnIndicator.innerText = `Player ${currentGame.currentPlayer.token} has won!`;
-  setTimeout(function() {
-    var boxes = document.querySelectorAll('.box');
-    for (var i = 0; i < boxes.length; i++) {
-      boxes[i].innerText = "";
-    }
+function displayCurrentTurn() {
+  if (currentGame.currentPlayer.token === '🥓') {
+    turnIndicator.innerText = `It's 🍩's turn`;
+  } else {
     turnIndicator.innerText = `It's 🥓's turn`;
-  }, 3000)
+  }
+  checkForWin();
+}
+
+function checkForWin() {
+  if (currentGame.turnCounter === 0) {
+    turnIndicator.innerText = `Player ${currentGame.currentPlayer.token} has won!`;
+    displayWins();
+  }
 }
 
 function displayWins() {
@@ -41,10 +46,12 @@ function displayWins() {
   clearScreenBoard();
 }
 
-function displayCurrentTurn() {
-  if (currentGame.currentPlayer.token === '🥓') {
-    turnIndicator.innerText = `It's 🍩's turn`;
-  } else {
+function clearScreenBoard() {
+  setTimeout(function() {
+    var boxes = document.querySelectorAll('.box');
+    for (var i = 0; i < boxes.length; i++) {
+      boxes[i].innerText = "";
+    }
     turnIndicator.innerText = `It's 🥓's turn`;
-  }
+  }, 3000)
 }
