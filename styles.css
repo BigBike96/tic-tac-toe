@@ -29,7 +29,13 @@ main {
 
 .wins-area {
   text-align: center;
+
+
   text-size: 10;
+}
+
+.stop-click {
+  pointer-events: none;
 }
 
 .game-board {
