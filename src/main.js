@@ -34,7 +34,7 @@ function displayCurrentTurn() {
 }
 
 function checkForWin() {
-  if (currentGame.turnCounter === 0) {
+  if (currentGame.turnCounter < 1) {
     turnIndicator.innerText = `Player ${currentGame.currentPlayer.token} has won!`;
     displayWins();
   }
