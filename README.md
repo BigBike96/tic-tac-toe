@@ -12,3 +12,7 @@ A game of tic tac toe
 * html
 * css
 * JavaScript
+
+Overview of project and goals
+Overview of technologies used, your code architecture, challenges, wins, and any other reflections
+Screenshots/gifs of your app

@@ -2,66 +2,37 @@ var player1Container = document.querySelector('#player1Container');
 var player2Container = document.querySelector('#player2Container');
 var turnIndicator = document.querySelector('#turnIndicator');
 var gamePlayArea = document.querySelector('#gamePlayArea');
-// var selectAllGameArea = document.querySelectorAll('')
-var boxA = document.querySelector('#boxA');
-var boxB = document.querySelector('#boxB');
-var boxC = document.querySelector('#boxC');
-var boxD = document.querySelector('#boxD');
-var boxE = document.querySelector('#boxE');
-var boxF = document.querySelector('#boxF');
-var boxG = document.querySelector('#boxG');
-var boxH = document.querySelector('#boxH');
-var boxI = document.querySelector('#boxI');
 
 var currentGame = new Game();
 
-// window.addEventListener('load', storageGameboard);
-gamePlayArea.addEventListener('click', clickHandler);
+window.addEventListener('load', loadLocalStorage);
+gamePlayArea.addEventListener('click', placeIcon);
 // gamePlayArea.addEventListener('click', gameBoardAction);
 
-function clickHandler(event) {
+function placeIcon(event) {
   event.preventDefault();
-  if (event.target.classList.contains('a')) {
+  if (event.target.classList.contains('box')) {
     currentGame.changeGameSpaceData(event.target.id);
-    boxA.innerText = currentGame.currentPlayer.token;
-  } else if ((event.target.classList.contains('b'))) {
-    currentGame.changeGameSpaceData(event.target.id);
-    boxB.innerText = currentGame.currentPlayer.token;
-  } else if ((event.target.classList.contains('c'))) {
-    currentGame.changeGameSpaceData(event.target.id);
-    boxC.innerText = currentGame.currentPlayer.token;
-  } else if ((event.target.classList.contains('d'))) {
-    currentGame.changeGameSpaceData(event.target.id);
-    boxD.innerText = currentGame.currentPlayer.token;
-  } else if ((event.target.classList.contains('e'))) {
-    currentGame.changeGameSpaceData(event.target.id);
-    boxE.innerText = currentGame.currentPlayer.token;
-  } else if ((event.target.classList.contains('f'))) {
-    currentGame.changeGameSpaceData(event.target.id);
-    boxF.innerText = currentGame.currentPlayer.token;
-  } else if ((event.target.classList.contains('g'))) {
-    currentGame.changeGameSpaceData(event.target.id);
-    boxG.innerText = currentGame.currentPlayer.token;
-  } else if ((event.target.classList.contains('h'))) {
-    currentGame.changeGameSpaceData(event.target.id);
-    boxH.innerText = currentGame.currentPlayer.token;
-  } else if ((event.target.classList.contains('i'))) {
-    currentGame.changeGameSpaceData(event.target.id);
-    boxI.innerText = currentGame.currentPlayer.token;
+    event.target.innerText = currentGame.currentPlayer.token;
+    displayCurrentTurn();
   }
-  displayCurrentTurn();
+}
+
+function loadLocalStorage() {
+  currentGame.player1.retrieveWinsFromStorage();
+  currentGame.player2.retrieveWinsFromStorage();
+  displayWins();
 }
 
 function clearScreenBoard() {
-  boxA.innerText = "";
-  boxB.innerText = "";
-  boxC.innerText = "";
-  boxD.innerText = "";
-  boxE.innerText = "";
-  boxF.innerText = "";
-  boxG.innerText = "";
-  boxH.innerText = "";
-  boxI.innerText = "";
+  turnIndicator.innerText = `Player ${currentGame.currentPlayer.token} has won!`;
+  setTimeout(function() {
+    var boxes = document.querySelectorAll('.box');
+    for (var i = 0; i < boxes.length; i++) {
+      boxes[i].innerText = "";
+    }
+    turnIndicator.innerText = `It's 🥓's turn`;
+  }, 3000)
 }
 
 function displayWins() {
@@ -77,23 +48,3 @@ function displayCurrentTurn() {
     turnIndicator.innerText = `It's 🥓's turn`;
   }
 }
-// gameBoardAction();
-
-// function gameBoardAction(event) {
-//   event.preventDefault();
-//   var clickedBox = event.target.id
-//   for (var i = 0; i < currentGame.tokenGameSpaces.length; i++) {
-//     if (event.target.id === currentGame.tokenGameSpaces[i].id) {
-//       currentGame.changeGameSpaceData(event.target.id);
-//       console.log(clickedBox);
-//       clickedBox.innerText = currentGame.currentPlayer.token;
-//     }
-//   }
-// }
-
-// function
-// function runs on each click
-// figure out which space was clicked
-// changeGameSpaceData
-
-// when clicking a box, change the inner text of the section (value?) to the icon

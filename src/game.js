@@ -31,44 +31,55 @@ class Game {
       this.detectWinConditions();
     }
   }
-
+// can displayWins() be moved to main.js
+// can this be smaller?
+// 'you win' message?
   detectWinConditions() {
     for (var i = 0; i < this.tokenGameSpaces.length; i++) {
       if (this.tokenGameSpaces[0] === this.tokenGameSpaces[1] && this.tokenGameSpaces[1] === this.tokenGameSpaces[2] && this.tokenGameSpaces[2] === this.currentPlayer.id) {
         this.currentPlayer.addWin();
         this.resetGameBoard();
         displayWins();
+        this.currentPlayer.saveWinsToStorage();
       } else if (this.tokenGameSpaces[3] === this.tokenGameSpaces[4] && this.tokenGameSpaces[4] === this.tokenGameSpaces[5] && this.tokenGameSpaces[5] === this.currentPlayer.id) {
         this.currentPlayer.addWin();
         this.resetGameBoard();
         displayWins();
+        this.currentPlayer.saveWinsToStorage();
       } else if (this.tokenGameSpaces[6] === this.tokenGameSpaces[7] && this.tokenGameSpaces[7] === this.tokenGameSpaces[8] && this.tokenGameSpaces[8] === this.currentPlayer.id) {
         this.currentPlayer.addWin();
         this.resetGameBoard();
         displayWins();
+        this.currentPlayer.saveWinsToStorage();
       } else if (this.tokenGameSpaces[0] === this.tokenGameSpaces[3] && this.tokenGameSpaces[3] === this.tokenGameSpaces[6] && this.tokenGameSpaces[6] === this.currentPlayer.id) {
         this.currentPlayer.addWin();
         this.resetGameBoard();
         displayWins();
+        this.currentPlayer.saveWinsToStorage();
       } else if (this.tokenGameSpaces[1] === this.tokenGameSpaces[4] && this.tokenGameSpaces[4] === this.tokenGameSpaces[7] && this.tokenGameSpaces[7] === this.currentPlayer.id) {
         this.currentPlayer.addWin();
         this.resetGameBoard();
         displayWins();
+        this.currentPlayer.saveWinsToStorage();
       } else if (this.tokenGameSpaces[2] === this.tokenGameSpaces[5] && this.tokenGameSpaces[5] === this.tokenGameSpaces[8] && this.tokenGameSpaces[8] === this.currentPlayer.id) {
         this.currentPlayer.addWin();
         this.resetGameBoard();
         displayWins();
+        this.currentPlayer.saveWinsToStorage();
       } else if (this.tokenGameSpaces[0] === this.tokenGameSpaces[4] && this.tokenGameSpaces[4] === this.tokenGameSpaces[8] && this.tokenGameSpaces[8] === this.currentPlayer.id) {
         this.currentPlayer.addWin();
         this.resetGameBoard();
         displayWins();
+        this.currentPlayer.saveWinsToStorage();
       } else if (this.tokenGameSpaces[2] === this.tokenGameSpaces[4] && this.tokenGameSpaces[4] === this.tokenGameSpaces[6] && this.tokenGameSpaces[6] === this.currentPlayer.id) {
         this.currentPlayer.addWin();
         this.resetGameBoard();
         displayWins();
+        this.currentPlayer.saveWinsToStorage();
       } else if (this.turnCounter === 9) {
         this.resetGameBoard();
         displayWins();
+        this.currentPlayer.saveWinsToStorage();
       }
     }
   }
