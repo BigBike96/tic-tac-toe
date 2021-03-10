@@ -42,7 +42,7 @@ main {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 5em;
+  padding: 3em;
 }
 
 .game-play-area {
