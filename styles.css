@@ -16,6 +16,13 @@ main {
   background-size: cover;
 }
 
+.text {
+  font-style: oblique;
+  font-size: 3em;
+  color: Yellow;
+
+}
+
 .player-turn {
   display: flex;
   align-items: center;
@@ -52,7 +59,8 @@ main {
 
 .game-play-area {
 
-  height: 60%;
+  height: 40vw;
+  width: 40vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -60,8 +68,13 @@ main {
 }
 
 .box {
+  font-size: 4em;
+  display: flex;
   background: url(assets/White-plate-yellow-background.jpg);
   background-size: cover;
-  /* background-color: #FFFFFF; */
-  height: 120px;
-  width: 120px;
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+  width: 30%;
+  border-radius: 30px;
