@@ -1,7 +1,3 @@
-* {
-  border: 1px solid red;
-}
-
 html,
 body {
   background: url(assets/Table-wood.jpg);
@@ -16,6 +12,12 @@ main {
   background-size: cover;
 }
 
+.text {
+  font-style: oblique;
+  font-size: 3em;
+  color: #F5F5DC;
+}
+
 .player-turn {
   display: flex;
   align-items: center;
@@ -25,25 +27,18 @@ main {
 .player-2-container {
   height: 100%;
   width: 70%;
+  padding: 3em;
 }
 
 .wins-area {
   text-align: center;
-
-
-  text-size: 10;
 }
 
 .stop-click {
   pointer-events: none;
 }
 
-.game-board {
-    /* background-color: #7FFFD4; */
-}
-
 .game-area {
-
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -51,8 +46,8 @@ main {
 }
 
 .game-play-area {
-
-  height: 60%;
+  height: 40vw;
+  width: 40vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -60,8 +55,13 @@ main {
 }
 
 .box {
+  font-size: 5em;
+  display: flex;
   background: url(assets/White-plate-yellow-background.jpg);
   background-size: cover;
-  /* background-color: #FFFFFF; */
-  height: 120px;
-  width: 120px;
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+  width: 30%;
+  border-radius: 30px;
