@@ -19,6 +19,8 @@ The game will automatically reset itself.
 In the event of a draw, no wins will be awarded and the game will reset.
 One a token is placed, the gamespace is locked until the end of the game.
 
+![tic-tac-toe-game](https://user-images.githubusercontent.com/60282216/110565866-6809de80-810c-11eb-9562-fbaf8e1c74a5.gif)
+
 ### Technologies used:
 * html
 * css
