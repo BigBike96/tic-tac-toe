@@ -2,17 +2,15 @@ var player1Container = document.querySelector('#player1Container');
 var player2Container = document.querySelector('#player2Container');
 var turnIndicator = document.querySelector('#turnIndicator');
 var gamePlayArea = document.querySelector('#gamePlayArea');
-
 var currentGame = new Game();
 
 window.addEventListener('load', loadLocalStorage);
 gamePlayArea.addEventListener('click', placeIcon);
-// gamePlayArea.addEventListener('click', gameBoardAction);
 
 function placeIcon(event) {
   event.preventDefault();
   if (event.target.classList.contains('box')) {
-    currentGame.changeGameSpaceData(event.target.id);
+    currentGame.updateTurnData(event.target.id);
     event.target.innerText = currentGame.currentPlayer.token;
     event.target.classList.add('stop-click');
     displayCurrentTurn();
@@ -35,7 +33,11 @@ function displayCurrentTurn() {
 }
 
 function checkForWin() {
-  if (currentGame.turnCounter === 0 && currentGame.currentPlayer) {
+  console.log(currentGame.drawGame);
+  if (currentGame.drawGame) {
+    turnIndicator.innerText = `Draw Game`;
+    displayWins();
+  } else if (currentGame.turnCounter === 0 && currentGame.currentPlayer) {
     turnIndicator.innerText = `Player ${currentGame.currentPlayer.token} has won!`;
     displayWins();
   }
@@ -56,6 +58,7 @@ function clearScreenBoard() {
       gamePlayArea.classList.remove('stop-click');
       boxes[i].classList.remove('stop-click');
     }
+    currentGame.drawGame = false;
     turnIndicator.innerText = `It's 🥓's turn`;
   }, 3000)
 }
